@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Zadanie 12.3.1</h1>
+    <p>Cieľom tejto úlohy bude identifikovať prestupné roky a roky končiace 0:</p>
+    <ul>
+        <li>Vypisujte v cykle roky od 1990 po 2030 (oba vrátane), každý na nový riadok (do konzoly)</li>
+        <li>Ak je rok priestupný, tak vypíšte pred neho písmeno P</li>
+        <li>Ak rok končí na 0, tak vypíšte písmeno O - "okrúhly" </li>
+        <li>Ak je rok priestupný aj "okrúhly", tak vypíšte aj P aj O </li>
+        <li>Ak ste sa v danom roku narodili, tak vypíšte ešte N </li>
+      </ul>  
+
+    <script>
+        "use strict"
+
+        for(let i = 1990; i <= 2030; i++){
+
+            console.log(i);
+
+            if(jePriestupny(i) == true){
+
+                if(i % 10 == 0){
+                    console.log("P O " + i); 
+                    continue;
+                }
+                console.log("P " + i);
+            }
+            else
+            {
+                if(i == 1993){
+                    console.log("N " + i); 
+                }
+            }
+        }
+
+        function jePriestupny(i){
+            let vysledok = false;
+            if (i % 100 == 0)
+            {
+                if (i % 400 == 0)
+                {
+                    vysledok = true;
+                }
+            }
+            else
+            {
+                if (i % 4 == 0)
+                {
+                    vysledok = true;
+                }
+            }
+            return vysledok;
+        }
+    </script>
+</body>
+</html>
